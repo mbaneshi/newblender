@@ -1,0 +1,30 @@
+id: mesh.polybuild_split_at_cursor_move
+idname: MESH_OT_polybuild_split_at_cursor_move
+stage: S01
+human:
+  workflow_rows:
+  - 45
+source:
+  file: source/blender/editors/mesh/mesh_ops.cc
+  line: 338
+  kind: macro
+  poll: '(macro: mesh.polybuild_split_at_cursor+transform.translate)'
+  gate: gui-event
+  has_exec: false
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: 'No twin and no exec: the input is screen/cursor placement. Re-specify the input as data, then
+    expose the core as a typed function.'
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

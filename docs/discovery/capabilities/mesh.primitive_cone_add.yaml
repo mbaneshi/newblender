@@ -1,0 +1,28 @@
+id: mesh.primitive_cone_add
+idname: MESH_OT_primitive_cone_add
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_add.cc
+  line: 552
+  kind: c
+  poll: ED_operator_scene_editable
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: exact
+  what: GN Cone
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Cone.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

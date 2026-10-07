@@ -1,0 +1,29 @@
+id: sculpt.face_sets_init
+idname: SCULPT_OT_face_sets_init
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_face_set.cc
+  line: 844
+  kind: c
+  poll: sculpt_mode_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: approx
+  what: GN node tool Set Face Set (+ Mesh Island)
+verdict:
+  call: declare
+  why: 'Approximate twin: GN node tool Set Face Set (+ Mesh Island). Declare once result parity is verified
+    by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

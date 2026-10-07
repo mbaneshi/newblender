@@ -1,0 +1,28 @@
+id: object.multires_base_apply
+idname: OBJECT_OT_multires_base_apply
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_multires_modifier.cc
+  line: 424
+  kind: c
+  poll: multires_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: false
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

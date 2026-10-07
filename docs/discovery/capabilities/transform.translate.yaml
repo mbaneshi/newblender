@@ -1,0 +1,32 @@
+id: transform.translate
+idname: TRANSFORM_OT_translate
+stage: S01
+human:
+  workflow_rows:
+  - 27
+  - 44
+  - 48
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 855
+  kind: transform
+  poll: ED_operator_active_screen_and_scene
+  gate: window
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: approx
+  what: 'edit mode: GN Set Position/Transform Geometry on selection'
+verdict:
+  call: free
+  why: Exec is already window-free (area may be null). Remove the modal veneer and hidden pivot/orientation
+    defaults; make it a pure transform with explicit space and pivot.
+  dead_fact: DF3
+  contested: false
+  by: hand
+  evidence: L1

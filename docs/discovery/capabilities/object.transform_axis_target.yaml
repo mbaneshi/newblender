@@ -1,0 +1,28 @@
+id: object.transform_axis_target
+idname: OBJECT_OT_transform_axis_target
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_transform.cc
+  line: 2464
+  kind: c
+  poll: ED_operator_region_view3d_active
+  gate: gui-event
+  has_exec: false
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: free
+  why: 'No exec: interactive only. Capture its inputs as properties; make exec pure.'
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

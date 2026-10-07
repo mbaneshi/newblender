@@ -1,0 +1,29 @@
+id: mesh.circularize
+idname: MESH_OT_circularize
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_circularize.cc
+  line: 137
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Set Position
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Set Position. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

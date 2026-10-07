@@ -1,0 +1,29 @@
+id: transform.shear
+idname: TRANSFORM_OT_shear
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 1076
+  kind: transform
+  poll: transform_shear_poll
+  gate: gui-region
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Set Position
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Set Position. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

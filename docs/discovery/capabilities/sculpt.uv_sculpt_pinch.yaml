@@ -1,0 +1,28 @@
+id: sculpt.uv_sculpt_pinch
+idname: SCULPT_OT_uv_sculpt_pinch
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/sculpt_uv.cc
+  line: 1041
+  kind: c
+  poll: ED_operator_uvedit_space_image
+  gate: gui-event
+  has_exec: false
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: free
+  why: 'No exec: interactive only. Capture its inputs as properties; make exec pure.'
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,28 @@
+id: sculpt.optimize
+idname: SCULPT_OT_optimize
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_ops.cc
+  line: 185
+  kind: c
+  poll: sculpt_mode_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: false
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

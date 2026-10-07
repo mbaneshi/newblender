@@ -1,0 +1,28 @@
+id: object.shade_smooth_by_angle
+idname: OBJECT_OT_shade_smooth_by_angle
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_edit.cc
+  line: 1803
+  kind: c
+  poll: shade_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: exact
+  what: GN "Smooth by Angle"
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN "Smooth by Angle".'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

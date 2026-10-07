@@ -1,0 +1,30 @@
+id: transform.resize
+idname: TRANSFORM_OT_resize
+stage: S01
+human:
+  workflow_rows:
+  - 48
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 882
+  kind: transform
+  poll: ED_operator_active_screen_and_scene
+  gate: window
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: approx
+  what: GN Transform Geometry / Scale Elements
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Transform Geometry / Scale Elements. Declare once result parity is verified
+    by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,28 @@
+id: object.drop_geometry_nodes
+idname: OBJECT_OT_drop_geometry_nodes
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_relations.cc
+  line: 3210
+  kind: c
+  poll: ED_operator_view3d_active
+  gate: gui-event
+  has_exec: false
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: free
+  why: 'No exec: interactive only. Capture its inputs as properties; make exec pure.'
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

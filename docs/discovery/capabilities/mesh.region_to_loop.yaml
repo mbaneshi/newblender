@@ -1,0 +1,28 @@
+id: mesh.region_to_loop
+idname: MESH_OT_region_to_loop
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_select.cc
+  line: 6333
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

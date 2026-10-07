@@ -1,0 +1,28 @@
+id: transform.tilt
+idname: TRANSFORM_OT_tilt
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 1017
+  kind: transform
+  poll: tilt_poll
+  gate: mode
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: n/a
+  what: (curves)
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

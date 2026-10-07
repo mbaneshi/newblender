@@ -1,0 +1,30 @@
+id: object.quadriflow_remesh
+idname: OBJECT_OT_quadriflow_remesh
+stage: S01
+human:
+  workflow_rows:
+  - 50
+source:
+  file: source/blender/editors/object/object_remesh.cc
+  line: 1134
+  kind: c
+  poll: object_remesh_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: true
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: Exec already runs headless as a blocking job; no node twin. Make it a plain function and a node.
+    Quality of auto-retopo vs human retopo is contested (row 50).
+  dead_fact: DF3
+  contested: true
+  by: hand
+  evidence: L1

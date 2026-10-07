@@ -1,0 +1,29 @@
+id: sculpt.mesh_filter
+idname: SCULPT_OT_mesh_filter
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_filter_mesh.cc
+  line: 2649
+  kind: c
+  poll: sculpt_mode_poll
+  gate: mode
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: approx
+  what: Smooth/Displace/Cast modifiers per filter type
+verdict:
+  call: declare
+  why: 'Approximate twin: Smooth/Displace/Cast modifiers per filter type. Declare once result parity is
+    verified by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

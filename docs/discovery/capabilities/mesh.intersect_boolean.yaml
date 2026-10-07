@@ -1,0 +1,29 @@
+id: mesh.intersect_boolean
+idname: MESH_OT_intersect_boolean
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_intersect.cc
+  line: 447
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: Boolean modifier + GN Mesh Boolean (geometry::boolean::mesh_boolean; Exact/Float/Manifold solvers)
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: Boolean modifier + GN Mesh Boolean (geometry::boolean::mesh_boolean;
+    Exact/Float/Manifold solvers).'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

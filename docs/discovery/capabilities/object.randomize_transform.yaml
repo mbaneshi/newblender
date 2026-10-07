@@ -1,0 +1,29 @@
+id: object.randomize_transform
+idname: OBJECT_OT_randomize_transform
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: scripts/startup/bl_operators/object_randomize_transform.py
+  line: 91
+  kind: python
+  poll: null
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Set Position/Transform + Random Value (on instances)
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Set Position/Transform + Random Value (on instances). Declare once result
+    parity is verified by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

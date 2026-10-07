@@ -1,0 +1,29 @@
+id: sculpt.detail_flood_fill
+idname: SCULPT_OT_detail_flood_fill
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_detail.cc
+  line: 179
+  kind: c
+  poll: sculpt_and_constant_or_manual_detail_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: approx
+  what: Remesh modifier
+verdict:
+  call: declare
+  why: 'Approximate twin: Remesh modifier. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

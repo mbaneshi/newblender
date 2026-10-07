@@ -1,0 +1,29 @@
+id: mesh.rip_edge
+idname: MESH_OT_rip_edge
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_rip_edge.cc
+  line: 225
+  kind: c
+  poll: EDBM_view3d_poll
+  gate: gui-region
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: 'No declarative twin; exec works given mode/data. Detach from edit-mode and selection state: a
+    typed function over explicit element sets, returning a diff.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

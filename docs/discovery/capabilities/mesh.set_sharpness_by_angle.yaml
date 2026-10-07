@@ -1,0 +1,28 @@
+id: mesh.set_sharpness_by_angle
+idname: MESH_OT_set_sharpness_by_angle
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_set_sharpness_by_angle.cc
+  line: 79
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: GN "Smooth by Angle" essentials node group
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN "Smooth by Angle" essentials node group.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

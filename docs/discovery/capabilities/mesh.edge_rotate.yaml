@@ -1,0 +1,29 @@
+id: mesh.edge_rotate
+idname: MESH_OT_edge_rotate
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_tools.cc
+  line: 2513
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: 'No declarative twin; exec works given mode/data. Detach from edit-mode and selection state: a
+    typed function over explicit element sets, returning a diff.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

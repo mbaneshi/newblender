@@ -1,0 +1,30 @@
+id: mesh.loop_select
+idname: MESH_OT_loop_select
+stage: S01
+human:
+  workflow_rows:
+  - 14
+source:
+  file: source/blender/editors/mesh/editmesh_select.cc
+  line: 2535
+  kind: c
+  poll: ED_operator_editmesh_region_view3d
+  gate: gui-region
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: Selection as a means of scoping. Replace with an explicit edge-loop query returning element indices
+    (exec is already index-driven).
+  dead_fact: DF1
+  contested: false
+  by: hand
+  evidence: L1

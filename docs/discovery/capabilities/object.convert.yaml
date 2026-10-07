@@ -1,0 +1,29 @@
+id: object.convert
+idname: OBJECT_OT_convert
+stage: S01
+human:
+  workflow_rows:
+  - 63
+source:
+  file: source/blender/editors/object/object_add.cc
+  line: 4896
+  kind: c
+  poll: object_convert_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: (bakes the declarative stack)
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

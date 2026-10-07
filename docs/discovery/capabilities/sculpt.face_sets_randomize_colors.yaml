@@ -1,0 +1,28 @@
+id: sculpt.face_sets_randomize_colors
+idname: SCULPT_OT_face_sets_randomize_colors
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_face_set.cc
+  line: 1215
+  kind: c
+  poll: sculpt_mode_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

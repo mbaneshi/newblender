@@ -1,0 +1,29 @@
+id: mesh.primitive_torus_add
+idname: MESH_OT_primitive_torus_add
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: scripts/startup/bl_operators/add_mesh_torus.py
+  line: 117
+  kind: python
+  poll: null
+  gate: none
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: approx
+  what: GN Curve Circle + Curve to Mesh
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Curve Circle + Curve to Mesh. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,30 @@
+id: transform.rotate
+idname: TRANSFORM_OT_rotate
+stage: S01
+human:
+  workflow_rows:
+  - 27
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 972
+  kind: transform
+  poll: ED_operator_active_screen_and_scene
+  gate: window
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: approx
+  what: GN Transform Geometry
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Transform Geometry. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

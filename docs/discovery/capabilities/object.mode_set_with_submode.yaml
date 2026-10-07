@@ -1,0 +1,28 @@
+id: object.mode_set_with_submode
+idname: OBJECT_OT_mode_set_with_submode
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_edit.cc
+  line: 2182
+  kind: c
+  poll: object_mode_set_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: false
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: Session mode switch; an agent names representation and state explicitly.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

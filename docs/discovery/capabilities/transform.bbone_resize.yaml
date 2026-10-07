@@ -1,0 +1,28 @@
+id: transform.bbone_resize
+idname: TRANSFORM_OT_bbone_resize
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 1196
+  kind: transform
+  poll: ED_operator_object_active_only_from_view_layer
+  gate: data
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

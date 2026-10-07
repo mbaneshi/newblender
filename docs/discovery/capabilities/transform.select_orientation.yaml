@@ -1,0 +1,29 @@
+id: transform.select_orientation
+idname: TRANSFORM_OT_select_orientation
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 201
+  kind: c
+  poll: ED_operator_view3d_active
+  gate: gui-region
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: Selection is how a human scopes the next action. For an agent, scope is an explicit argument (element
+    indices / attribute mask). Keep the queries, drop the stateful selection.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

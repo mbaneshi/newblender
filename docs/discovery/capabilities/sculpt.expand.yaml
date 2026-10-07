@@ -1,0 +1,29 @@
+id: sculpt.expand
+idname: SCULPT_OT_expand
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_expand.cc
+  line: 3138
+  kind: c
+  poll: sculpt_mode_poll
+  gate: gui-event
+  has_exec: false
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: approx
+  what: GN fields (topology distance)
+verdict:
+  call: declare
+  why: 'Approximate twin: GN fields (topology distance). Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

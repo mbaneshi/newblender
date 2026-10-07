@@ -1,0 +1,28 @@
+id: mesh.extrude_region_shrink_fatten
+idname: MESH_OT_extrude_region_shrink_fatten
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/mesh_ops.cc
+  line: 293
+  kind: macro
+  poll: '(macro: mesh.extrude_region+transform.shrink_fatten)'
+  gate: mode
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: GN Extrude Mesh (offset along normal)
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Extrude Mesh (offset along normal).'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

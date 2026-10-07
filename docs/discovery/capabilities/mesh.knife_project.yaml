@@ -1,0 +1,29 @@
+id: mesh.knife_project
+idname: MESH_OT_knife_project
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_knife_project.cc
+  line: 155
+  kind: c
+  poll: ED_operator_editmesh_region_view3d
+  gate: gui-region
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: 'No declarative twin; exec works given mode/data. Detach from edit-mode and selection state: a
+    typed function over explicit element sets, returning a diff.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

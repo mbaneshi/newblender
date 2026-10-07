@@ -1,0 +1,28 @@
+id: sculpt.trim_line_gesture
+idname: SCULPT_OT_trim_line_gesture
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_trim.cc
+  line: 941
+  kind: c
+  poll: sculpt_mode_poll_view3d
+  gate: gui-region
+  has_exec: true
+  modal: true
+  undo: false
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: approx
+  what: Boolean
+verdict:
+  call: declare
+  why: 'Approximate twin: Boolean. Declare once result parity is verified by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

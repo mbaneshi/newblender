@@ -1,0 +1,29 @@
+id: mesh.remove_doubles
+idname: MESH_OT_remove_doubles
+stage: S01
+human:
+  workflow_rows:
+  - 59
+source:
+  file: source/blender/editors/mesh/editmesh_tools.cc
+  line: 3752
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: Weld modifier + GN Merge by Distance (geometry::mesh_merge_by_distance_all)
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: Weld modifier + GN Merge by Distance (geometry::mesh_merge_by_distance_all).'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

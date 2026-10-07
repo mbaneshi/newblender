@@ -1,0 +1,30 @@
+id: object.modifier_apply
+idname: OBJECT_OT_modifier_apply
+stage: S01
+human:
+  workflow_rows:
+  - 30
+  - 63
+source:
+  file: source/blender/editors/object/object_modifier.cc
+  line: 2113
+  kind: c
+  poll: modifier_apply_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Bakes a declared step into data; the agent equivalent of 'commit'. Keep.
+  dead_fact: null
+  contested: false
+  by: hand
+  evidence: L1

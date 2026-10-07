@@ -1,0 +1,28 @@
+id: sculpt.sculptmode_toggle
+idname: SCULPT_OT_sculptmode_toggle
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_ops.cc
+  line: 609
+  kind: c
+  poll: ED_operator_object_active_editable_mesh_from_view_layer
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: Session mode switch; an agent names representation and state explicitly.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

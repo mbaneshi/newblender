@@ -1,0 +1,28 @@
+id: object.modifier_move_down
+idname: OBJECT_OT_modifier_move_down
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_modifier.cc
+  line: 1879
+  kind: c
+  poll: edit_modifier_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,28 @@
+id: sculpt.set_pivot_position
+idname: SCULPT_OT_set_pivot_position
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_transform.cc
+  line: 1005
+  kind: c
+  poll: sculpt_mode_poll_view3d
+  gate: gui-region
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: free
+  why: Exec logic is gated by a GUI region it doesn't fundamentally need.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

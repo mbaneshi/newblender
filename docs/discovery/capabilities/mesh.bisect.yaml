@@ -1,0 +1,29 @@
+id: mesh.bisect
+idname: MESH_OT_bisect
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_bisect.cc
+  line: 413
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Mesh Boolean with plane / Mirror bisect
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Mesh Boolean with plane / Mirror bisect. Declare once result parity is verified
+    by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

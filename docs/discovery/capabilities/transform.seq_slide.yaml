@@ -1,0 +1,28 @@
+id: transform.seq_slide
+idname: TRANSFORM_OT_seq_slide
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 1376
+  kind: transform
+  poll: ED_operator_sequencer_active
+  gate: gui-region
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: free
+  why: Exec logic is gated by a GUI region it doesn't fundamentally need.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

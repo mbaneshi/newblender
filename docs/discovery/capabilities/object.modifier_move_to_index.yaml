@@ -1,0 +1,28 @@
+id: object.modifier_move_to_index
+idname: OBJECT_OT_modifier_move_to_index
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_modifier.cc
+  line: 1940
+  kind: c
+  poll: edit_modifier_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Stack ordering is part of the recipe.
+  dead_fact: null
+  contested: false
+  by: hand
+  evidence: L1

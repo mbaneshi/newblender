@@ -1,0 +1,28 @@
+id: transform.from_gizmo
+idname: TRANSFORM_OT_from_gizmo
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 1506
+  kind: c
+  poll: ED_operator_regionactive
+  gate: gui-event
+  has_exec: false
+  modal: false
+  undo: false
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: free
+  why: 'No exec: interactive only. Capture its inputs as properties; make exec pure.'
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

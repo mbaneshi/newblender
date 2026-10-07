@@ -1,0 +1,28 @@
+id: mesh.primitive_cube_add_gizmo
+idname: MESH_OT_primitive_cube_add_gizmo
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_add_gizmo.cc
+  line: 387
+  kind: c
+  poll: ED_operator_editmesh_view3d
+  gate: gui-region
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: exact
+  what: GN Cube
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Cube.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

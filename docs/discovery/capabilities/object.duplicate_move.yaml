@@ -1,0 +1,29 @@
+id: object.duplicate_move
+idname: OBJECT_OT_duplicate_move
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_ops.cc
+  line: 306
+  kind: macro
+  poll: '(macro: object.duplicate+transform.translate)'
+  gate: window
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Object Info + Transform
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Object Info + Transform. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

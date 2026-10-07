@@ -1,0 +1,29 @@
+id: object.duplicates_make_real
+idname: OBJECT_OT_duplicates_make_real
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_add.cc
+  line: 3089
+  kind: c
+  poll: ED_operator_objectmode
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Realize Instances
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Realize Instances. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

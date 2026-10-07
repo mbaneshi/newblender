@@ -1,0 +1,29 @@
+id: object.material_slot_select
+idname: OBJECT_OT_material_slot_select
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/render/render_shading.cc
+  line: 511
+  kind: c
+  poll: (none)
+  gate: none
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: Selection is how a human scopes the next action. For an agent, scope is an explicit argument (element
+    indices / attribute mask). Keep the queries, drop the stateful selection.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

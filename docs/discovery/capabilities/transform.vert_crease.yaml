@@ -1,0 +1,28 @@
+id: transform.vert_crease
+idname: TRANSFORM_OT_vert_crease
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 1331
+  kind: transform
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: GN Store Named Attribute crease_vert
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Store Named Attribute crease_vert.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

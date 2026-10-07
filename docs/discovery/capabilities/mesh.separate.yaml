@@ -1,0 +1,31 @@
+id: mesh.separate
+idname: MESH_OT_separate
+stage: S01
+human:
+  workflow_rows:
+  - 25
+  - 40
+source:
+  file: source/blender/editors/mesh/editmesh_tools.cc
+  line: 4658
+  kind: c
+  poll: ED_operator_scene_editable
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: approx
+  what: GN Separate Geometry (same object; not new object)
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Separate Geometry (same object; not new object). Declare once result parity
+    is verified by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

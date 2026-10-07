@@ -1,0 +1,29 @@
+id: object.select_same_collection
+idname: OBJECT_OT_select_same_collection
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_select.cc
+  line: 1218
+  kind: c
+  poll: objects_selectable_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: Selection is how a human scopes the next action. For an agent, scope is an explicit argument (element
+    indices / attribute mask). Keep the queries, drop the stateful selection.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,34 @@
+id: sculpt.brush_stroke
+idname: SCULPT_OT_brush_stroke
+stage: S01
+human:
+  workflow_rows:
+  - 36
+  - 38
+  - 39
+  - 40
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt.cc
+  line: 6197
+  kind: c
+  poll: sculpt_mode_and_brush_poll
+  gate: gui-region
+  has_exec: true
+  modal: true
+  undo: false
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: none
+  what: (no declarative sculpt; Displace modifier is only a distant cousin)
+verdict:
+  call: free
+  why: The stroke is the creative act. Its agent form could be a declared displacement/deformation field
+    or a replayable 3D path. Whether an agent should sculpt by strokes at all is a taste question (gray
+    zone G1).
+  dead_fact: DF3
+  contested: true
+  by: hand
+  evidence: L1

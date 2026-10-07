@@ -1,0 +1,29 @@
+id: sculpt.symmetrize
+idname: SCULPT_OT_symmetrize
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_ops.cc
+  line: 297
+  kind: c
+  poll: no_multires_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: false
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: approx
+  what: Mirror modifier
+verdict:
+  call: declare
+  why: 'Approximate twin: Mirror modifier. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

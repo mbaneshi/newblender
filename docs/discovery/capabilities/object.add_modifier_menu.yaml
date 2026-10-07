@@ -1,0 +1,28 @@
+id: object.add_modifier_menu
+idname: OBJECT_OT_add_modifier_menu
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: scripts/startup/bl_ui/properties_data_modifier.py
+  line: 294
+  kind: python
+  poll: null
+  gate: gui-event
+  has_exec: false
+  modal: false
+  undo: false
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: UI chrome (menus/popups) with no data effect of its own.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

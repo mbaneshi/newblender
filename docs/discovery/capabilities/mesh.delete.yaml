@@ -1,0 +1,29 @@
+id: mesh.delete
+idname: MESH_OT_delete
+stage: S01
+human:
+  workflow_rows:
+  - 67
+source:
+  file: source/blender/editors/mesh/editmesh_tools.cc
+  line: 545
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: GN Delete Geometry (geometry::separate_geometry)
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Delete Geometry (geometry::separate_geometry).'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

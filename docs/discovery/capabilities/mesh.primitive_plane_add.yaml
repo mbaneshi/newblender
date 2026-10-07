@@ -1,0 +1,28 @@
+id: mesh.primitive_plane_add
+idname: MESH_OT_primitive_plane_add
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_add.cc
+  line: 276
+  kind: c
+  poll: ED_operator_scene_editable
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: exact
+  what: GN Grid (1x1)
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Grid (1x1).'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

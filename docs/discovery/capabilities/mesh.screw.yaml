@@ -1,0 +1,28 @@
+id: mesh.screw
+idname: MESH_OT_screw
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_extrude_screw.cc
+  line: 191
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: Screw modifier
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: Screw modifier.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

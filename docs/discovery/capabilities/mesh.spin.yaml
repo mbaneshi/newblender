@@ -1,0 +1,29 @@
+id: mesh.spin
+idname: MESH_OT_spin
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_extrude_spin.cc
+  line: 177
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: Screw modifier (angle/steps; no dupli mode)
+verdict:
+  call: declare
+  why: 'Approximate twin: Screw modifier (angle/steps; no dupli mode). Declare once result parity is verified
+    by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

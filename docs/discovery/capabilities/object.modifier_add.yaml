@@ -1,0 +1,39 @@
+id: object.modifier_add
+idname: OBJECT_OT_modifier_add
+stage: S01
+human:
+  workflow_rows:
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 33
+  - 46
+  - 51
+source:
+  file: source/blender/editors/object/object_modifier.cc
+  line: 1491
+  kind: c
+  poll: ED_operator_object_active_editable
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: This is the declarative layer itself. Keep, with typed arguments and no menu.
+  dead_fact: null
+  contested: false
+  by: hand
+  evidence: L1

@@ -1,0 +1,28 @@
+id: object.copy_relative_transform
+idname: OBJECT_OT_copy_relative_transform
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: scripts/startup/bl_operators/copy_global_transform.py
+  line: 166
+  kind: python
+  poll: null
+  gate: data
+  has_exec: true
+  modal: false
+  undo: false
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,29 @@
+id: mesh.extrude_manifold
+idname: MESH_OT_extrude_manifold
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/mesh_ops.cc
+  line: 272
+  kind: macro
+  poll: '(macro: mesh.extrude_region+transform.translate)'
+  gate: window
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Extrude Mesh + Mesh Boolean
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Extrude Mesh + Mesh Boolean. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

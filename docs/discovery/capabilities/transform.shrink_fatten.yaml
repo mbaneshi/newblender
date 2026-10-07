@@ -1,0 +1,29 @@
+id: transform.shrink_fatten
+idname: TRANSFORM_OT_shrink_fatten
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 1125
+  kind: transform
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Set Position (normal offset)
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Set Position (normal offset). Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

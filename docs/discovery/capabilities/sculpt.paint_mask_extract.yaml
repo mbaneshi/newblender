@@ -1,0 +1,29 @@
+id: sculpt.paint_mask_extract
+idname: SCULPT_OT_paint_mask_extract
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_mask_extract.cc
+  line: 320
+  kind: c
+  poll: geometry_extract_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: approx
+  what: GN Separate Geometry + Extrude/Solidify
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Separate Geometry + Extrude/Solidify. Declare once result parity is verified
+    by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

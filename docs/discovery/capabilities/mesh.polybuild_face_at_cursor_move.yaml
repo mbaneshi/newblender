@@ -1,0 +1,30 @@
+id: mesh.polybuild_face_at_cursor_move
+idname: MESH_OT_polybuild_face_at_cursor_move
+stage: S01
+human:
+  workflow_rows:
+  - 45
+source:
+  file: source/blender/editors/mesh/mesh_ops.cc
+  line: 329
+  kind: macro
+  poll: '(macro: mesh.polybuild_face_at_cursor+transform.translate)'
+  gate: gui-event
+  has_exec: false
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: Manual retopology by cursor. Input must become data (target loops/patches). Whether machine retopo
+    is acceptable for final topology is the owner's call (workflow row 50).
+  dead_fact: DF1
+  contested: true
+  by: hand
+  evidence: L1

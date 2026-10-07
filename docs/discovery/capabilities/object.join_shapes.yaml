@@ -1,0 +1,29 @@
+id: object.join_shapes
+idname: OBJECT_OT_join_shapes
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_add.cc
+  line: 5587
+  kind: c
+  poll: active_shape_key_editable_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: true
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: 'No declarative twin; exec works given mode/data. Detach from edit-mode and selection state: a
+    typed function over explicit element sets, returning a diff.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

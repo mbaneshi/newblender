@@ -1,0 +1,29 @@
+id: mesh.rip
+idname: MESH_OT_rip
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_rip.cc
+  line: 1133
+  kind: c
+  poll: EDBM_view3d_poll
+  gate: gui-event
+  has_exec: false
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: 'No twin and no exec: the input is screen/cursor placement. Re-specify the input as data, then
+    expose the core as a typed function.'
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

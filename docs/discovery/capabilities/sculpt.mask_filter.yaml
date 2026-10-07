@@ -1,0 +1,29 @@
+id: sculpt.mask_filter
+idname: SCULPT_OT_mask_filter
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_filter_mask.cc
+  line: 1090
+  kind: c
+  poll: sculpt_mode_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: approx
+  what: 'GN node tool: Store Named Attribute ".sculpt_mask" / mask fields'
+verdict:
+  call: declare
+  why: 'Approximate twin: GN node tool: Store Named Attribute ".sculpt_mask" / mask fields. Declare once
+    result parity is verified by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,28 @@
+id: mesh.customdata_face_sets_clear
+idname: MESH_OT_customdata_face_sets_clear
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/mesh_data.cc
+  line: 549
+  kind: c
+  poll: mesh_customdata_face_sets_clear_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

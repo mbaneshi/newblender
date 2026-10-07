@@ -1,0 +1,28 @@
+id: sculpt.mask_init
+idname: SCULPT_OT_mask_init
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_mask_init.cc
+  line: 291
+  kind: c
+  poll: sculpt_mode_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: approx
+  what: GN fields
+verdict:
+  call: declare
+  why: 'Approximate twin: GN fields. Declare once result parity is verified by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

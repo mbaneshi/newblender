@@ -1,0 +1,29 @@
+id: object.join
+idname: OBJECT_OT_join
+stage: S01
+human:
+  workflow_rows:
+  - 25
+source:
+  file: source/blender/editors/object/object_add.cc
+  line: 5533
+  kind: c
+  poll: object_join_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: exact
+  what: GN Join Geometry (+ Object Info)
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Join Geometry (+ Object Info).'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

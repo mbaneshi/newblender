@@ -1,0 +1,29 @@
+id: transform.skin_resize
+idname: TRANSFORM_OT_skin_resize
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 921
+  kind: transform
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: Skin modifier data (no node)
+verdict:
+  call: declare
+  why: 'Approximate twin: Skin modifier data (no node). Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

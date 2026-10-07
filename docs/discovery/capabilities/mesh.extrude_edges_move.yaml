@@ -1,0 +1,28 @@
+id: mesh.extrude_edges_move
+idname: MESH_OT_extrude_edges_move
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/mesh_ops.cc
+  line: 311
+  kind: macro
+  poll: '(macro: mesh.extrude_edges_indiv+transform.translate)'
+  gate: window
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: GN Extrude Mesh offset
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Extrude Mesh offset.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

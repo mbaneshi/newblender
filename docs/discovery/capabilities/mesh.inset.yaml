@@ -1,0 +1,31 @@
+id: mesh.inset
+idname: MESH_OT_inset
+stage: S01
+human:
+  workflow_rows:
+  - 13
+  - 32
+source:
+  file: source/blender/editors/mesh/editmesh_inset.cc
+  line: 586
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Extrude Mesh (offset 0) + Scale Elements
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Extrude Mesh (offset 0) + Scale Elements. Declare once result parity is verified
+    by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

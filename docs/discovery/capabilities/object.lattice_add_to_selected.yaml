@@ -1,0 +1,28 @@
+id: object.lattice_add_to_selected
+idname: OBJECT_OT_lattice_add_to_selected
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_add.cc
+  line: 952
+  kind: c
+  poll: ED_operator_objectmode
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

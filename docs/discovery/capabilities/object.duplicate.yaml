@@ -1,0 +1,29 @@
+id: object.duplicate
+idname: OBJECT_OT_duplicate
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_add.cc
+  line: 5164
+  kind: c
+  poll: ED_operator_objectmode
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Object Info + Join / instancing
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Object Info + Join / instancing. Declare once result parity is verified by
+    mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

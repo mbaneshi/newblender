@@ -1,0 +1,29 @@
+id: mesh.normals_tools
+idname: MESH_OT_normals_tools
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_tools.cc
+  line: 9767
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: Normal Edit modifier / GN Set Mesh Normal
+verdict:
+  call: declare
+  why: 'Approximate twin: Normal Edit modifier / GN Set Mesh Normal. Declare once result parity is verified
+    by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,28 @@
+id: mesh.attribute_set
+idname: MESH_OT_attribute_set
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_attribute.cc
+  line: 272
+  kind: c
+  poll: mesh_active_attribute_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: exact
+  what: GN Store Named Attribute
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Store Named Attribute.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

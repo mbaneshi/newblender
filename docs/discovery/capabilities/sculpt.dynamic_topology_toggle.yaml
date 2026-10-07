@@ -1,0 +1,29 @@
+id: sculpt.dynamic_topology_toggle
+idname: SCULPT_OT_dynamic_topology_toggle
+stage: S01
+human:
+  workflow_rows:
+  - 38
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_dyntopo.cc
+  line: 302
+  kind: c
+  poll: sculpt_mode_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: false
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: Session mode switch; an agent names representation and state explicitly.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

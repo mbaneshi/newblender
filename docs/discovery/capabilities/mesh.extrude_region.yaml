@@ -1,0 +1,30 @@
+id: mesh.extrude_region
+idname: MESH_OT_extrude_region
+stage: S01
+human:
+  workflow_rows:
+  - 13
+  - 48
+source:
+  file: source/blender/editors/mesh/editmesh_extrude.cc
+  line: 462
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: GN Extrude Mesh (Faces, individual=false)
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Extrude Mesh (Faces, individual=false).'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

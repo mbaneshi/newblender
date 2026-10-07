@@ -1,0 +1,29 @@
+id: mesh.primitive_monkey_add
+idname: MESH_OT_primitive_monkey_add
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_add.cc
+  line: 691
+  kind: c
+  poll: ED_operator_scene_editable
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: 'No declarative twin; exec works given mode/data. Detach from edit-mode and selection state: a
+    typed function over explicit element sets, returning a diff.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

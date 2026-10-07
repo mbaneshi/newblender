@@ -1,0 +1,29 @@
+id: transform.bend
+idname: TRANSFORM_OT_bend
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 1041
+  kind: transform
+  poll: ED_operator_region_view3d_active
+  gate: gui-event
+  has_exec: false
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: approx
+  what: Simple Deform (Bend) modifier
+verdict:
+  call: declare
+  why: 'Approximate twin: Simple Deform (Bend) modifier. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

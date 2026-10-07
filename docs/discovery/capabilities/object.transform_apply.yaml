@@ -1,0 +1,30 @@
+id: object.transform_apply
+idname: OBJECT_OT_transform_apply
+stage: S01
+human:
+  workflow_rows:
+  - 62
+source:
+  file: source/blender/editors/object/object_transform.cc
+  line: 1195
+  kind: c
+  poll: ED_operator_objectmode
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Transform Geometry
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Transform Geometry. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

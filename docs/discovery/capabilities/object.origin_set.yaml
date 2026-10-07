@@ -1,0 +1,31 @@
+id: object.origin_set
+idname: OBJECT_OT_origin_set
+stage: S01
+human:
+  workflow_rows:
+  - 27
+  - 68
+source:
+  file: source/blender/editors/object/object_transform.cc
+  line: 1922
+  kind: c
+  poll: ED_operator_scene_editable
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: approx
+  what: GN Transform Geometry (+ object transform)
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Transform Geometry (+ object transform). Declare once result parity is verified
+    by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

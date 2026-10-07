@@ -1,0 +1,29 @@
+id: object.shade_smooth
+idname: OBJECT_OT_shade_smooth
+stage: S01
+human:
+  workflow_rows:
+  - 61
+source:
+  file: source/blender/editors/object/object_edit.cc
+  line: 1782
+  kind: c
+  poll: shade_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: exact
+  what: GN Set Shade Smooth
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Set Shade Smooth.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

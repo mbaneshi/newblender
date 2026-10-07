@@ -1,0 +1,29 @@
+id: object.shape_key_apply_to_basis
+idname: OBJECT_OT_shape_key_apply_to_basis
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_shapekey.cc
+  line: 1056
+  kind: c
+  poll: shape_key_apply_to_basis_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: 'No declarative twin; exec works given mode/data. Detach from edit-mode and selection state: a
+    typed function over explicit element sets, returning a diff.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,28 @@
+id: mesh.edge_split
+idname: MESH_OT_edge_split
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_tools.cc
+  line: 2044
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: Edge Split modifier (BM_mesh_edgesplit) + GN Split Edges (geometry::split_edges)
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: Edge Split modifier (BM_mesh_edgesplit) + GN Split Edges (geometry::split_edges).'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

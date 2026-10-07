@@ -1,0 +1,28 @@
+id: object.modifier_copy_to_selected
+idname: OBJECT_OT_modifier_copy_to_selected
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_modifier.cc
+  line: 2479
+  kind: c
+  poll: modifier_copy_to_selected_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

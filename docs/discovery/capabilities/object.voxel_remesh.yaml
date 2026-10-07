@@ -1,0 +1,31 @@
+id: object.voxel_remesh
+idname: OBJECT_OT_voxel_remesh
+stage: S01
+human:
+  workflow_rows:
+  - 37
+source:
+  file: source/blender/editors/object/object_remesh.cc
+  line: 184
+  kind: c
+  poll: object_remesh_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: true
+twin:
+  status: exact
+  what: Remesh modifier Voxel (MOD_remesh.cc:139 -> BKE_mesh_remesh_voxel, same core) + GN Mesh to Volume/Volume
+    to Mesh
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: Remesh modifier Voxel (MOD_remesh.cc:139 -> BKE_mesh_remesh_voxel,
+    same core) + GN Mesh to Volume/Volume to Mesh.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,29 @@
+id: object.select_camera
+idname: OBJECT_OT_select_camera
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: scripts/startup/bl_operators/object.py
+  line: 114
+  kind: python
+  poll: null
+  gate: none
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: Selection is how a human scopes the next action. For an agent, scope is an explicit argument (element
+    indices / attribute mask). Keep the queries, drop the stateful selection.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

@@ -1,0 +1,28 @@
+id: object.shade_auto_smooth
+idname: OBJECT_OT_shade_auto_smooth
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_edit.cc
+  line: 1977
+  kind: c
+  poll: shade_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: false
+    SCULPT: false
+twin:
+  status: exact
+  what: 'IS a twin: adds GN "Smooth by Angle" essentials modifier'
+verdict:
+  call: declare
+  why: Already just adds the Smooth by Angle node-group modifier.
+  dead_fact: DF3
+  contested: false
+  by: hand
+  evidence: L1

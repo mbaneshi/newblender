@@ -1,0 +1,29 @@
+id: sculpt.face_set_extract
+idname: SCULPT_OT_face_set_extract
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/sculpt_paint/mesh/sculpt_mask_extract.cc
+  line: 372
+  kind: c
+  poll: geometry_extract_poll
+  gate: gui-event
+  has_exec: false
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: true
+twin:
+  status: approx
+  what: GN Separate Geometry
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Separate Geometry. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

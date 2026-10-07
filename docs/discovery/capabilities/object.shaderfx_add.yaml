@@ -1,0 +1,28 @@
+id: object.shaderfx_add
+idname: OBJECT_OT_shaderfx_add
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_shader_fx.cc
+  line: 365
+  kind: c
+  poll: edit_shaderfx_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

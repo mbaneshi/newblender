@@ -1,0 +1,29 @@
+id: mesh.delete_loose
+idname: MESH_OT_delete_loose
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_tools.cc
+  line: 669
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Delete Geometry + Vertex/Edge Neighbors field
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Delete Geometry + Vertex/Edge Neighbors field. Declare once result parity
+    is verified by mesh-isomorphism test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

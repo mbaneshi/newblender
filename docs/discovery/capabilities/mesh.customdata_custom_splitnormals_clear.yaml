@@ -1,0 +1,28 @@
+id: mesh.customdata_custom_splitnormals_clear
+idname: MESH_OT_customdata_custom_splitnormals_clear
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/mesh_data.cc
+  line: 730
+  kind: c
+  poll: ED_operator_editable_mesh
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: keep
+  why: Usable as a function today, modulo hidden context defaults made explicit.
+  dead_fact: null
+  contested: false
+  by: rule
+  evidence: L1

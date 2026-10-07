@@ -1,0 +1,28 @@
+id: mesh.duplicate_move
+idname: MESH_OT_duplicate_move
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/mesh_ops.cc
+  line: 236
+  kind: macro
+  poll: '(macro: mesh.duplicate+transform.translate)'
+  gate: window
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: GN Duplicate Elements + Set Position
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Duplicate Elements + Set Position.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

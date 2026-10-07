@@ -1,0 +1,28 @@
+id: mesh.primitive_circle_add
+idname: MESH_OT_primitive_circle_add
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_add.cc
+  line: 408
+  kind: c
+  poll: ED_operator_scene_editable
+  gate: data
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: exact
+  what: GN Mesh Circle
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Mesh Circle.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

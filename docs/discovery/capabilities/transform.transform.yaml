@@ -1,0 +1,29 @@
+id: transform.transform
+idname: TRANSFORM_OT_transform
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 1434
+  kind: c
+  poll: ED_operator_active_screen_and_scene
+  gate: window
+  has_exec: true
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: approx
+  what: GN Set Position/Transform
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Set Position/Transform. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

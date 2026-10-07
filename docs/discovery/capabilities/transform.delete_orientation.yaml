@@ -1,0 +1,28 @@
+id: transform.delete_orientation
+idname: TRANSFORM_OT_delete_orientation
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 251
+  kind: c
+  poll: delete_orientation_poll
+  gate: gui-region
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: free
+  why: Exec logic is gated by a GUI region it doesn't fundamentally need.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

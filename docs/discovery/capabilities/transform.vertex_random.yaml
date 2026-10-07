@@ -1,0 +1,29 @@
+id: transform.vertex_random
+idname: TRANSFORM_OT_vertex_random
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/object/object_random.cc
+  line: 142
+  kind: c
+  poll: ED_transverts_poll
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: GN Set Position + Random Value
+verdict:
+  call: declare
+  why: 'Approximate twin: GN Set Position + Random Value. Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

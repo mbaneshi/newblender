@@ -1,0 +1,28 @@
+id: mesh.faces_shade_flat
+idname: MESH_OT_faces_shade_flat
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_tools.cc
+  line: 3104
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: exact
+  what: GN Set Shade Smooth (false)
+verdict:
+  call: declare
+  why: 'Exact declarative twin exists: GN Set Shade Smooth (false).'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

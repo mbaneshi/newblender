@@ -1,0 +1,29 @@
+id: mesh.select_ungrouped
+idname: MESH_OT_select_ungrouped
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/mesh/editmesh_select.cc
+  line: 6096
+  kind: c
+  poll: edbm_select_ungrouped_poll
+  gate: selection
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: Selection is how a human scopes the next action. For an agent, scope is an explicit argument (element
+    indices / attribute mask). Keep the queries, drop the stateful selection.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

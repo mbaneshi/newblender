@@ -1,0 +1,30 @@
+id: mesh.symmetrize
+idname: MESH_OT_symmetrize
+stage: S01
+human:
+  workflow_rows:
+  - 46
+source:
+  file: source/blender/editors/mesh/editmesh_tools.cc
+  line: 8092
+  kind: c
+  poll: ED_operator_editmesh
+  gate: mode
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: true
+    SCULPT: false
+twin:
+  status: approx
+  what: Mirror modifier (bisect+merge)
+verdict:
+  call: declare
+  why: 'Approximate twin: Mirror modifier (bisect+merge). Declare once result parity is verified by mesh-isomorphism
+    test.'
+  dead_fact: DF3
+  contested: false
+  by: rule
+  evidence: L1

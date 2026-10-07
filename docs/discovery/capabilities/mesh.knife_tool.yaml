@@ -1,0 +1,30 @@
+id: mesh.knife_tool
+idname: MESH_OT_knife_tool
+stage: S01
+human:
+  workflow_rows:
+  - 13
+source:
+  file: source/blender/editors/mesh/editmesh_knife.cc
+  line: 4653
+  kind: c
+  poll: ED_operator_editmesh_view3d
+  gate: gui-event
+  has_exec: false
+  modal: true
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: none
+  what: ''
+verdict:
+  call: free
+  why: 'Invoke/modal only, no exec. Re-specify the input as data: a cut path (polyline in object space)
+    or cutting plane(s); the core BM_face_split_edgenet already exists.'
+  dead_fact: DF1
+  contested: false
+  by: hand
+  evidence: L1

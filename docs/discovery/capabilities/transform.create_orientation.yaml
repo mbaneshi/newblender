@@ -1,0 +1,28 @@
+id: transform.create_orientation
+idname: TRANSFORM_OT_create_orientation
+stage: S01
+human:
+  workflow_rows: []
+source:
+  file: source/blender/editors/transform/transform_ops.cc
+  line: 299
+  kind: c
+  poll: ED_operator_areaactive
+  gate: gui-region
+  has_exec: true
+  modal: false
+  undo: true
+  poll_headless:
+    OBJECT: false
+    EDIT: false
+    SCULPT: false
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: free
+  why: Exec logic is gated by a GUI region it doesn't fundamentally need.
+  dead_fact: DF1
+  contested: false
+  by: rule
+  evidence: L1

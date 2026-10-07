@@ -1,0 +1,30 @@
+id: object.mode_set
+idname: OBJECT_OT_mode_set
+stage: S01
+human:
+  workflow_rows:
+  - 12
+source:
+  file: source/blender/editors/object/object_edit.cc
+  line: 2158
+  kind: c
+  poll: object_mode_set_poll
+  gate: data
+  has_exec: true
+  modal: false
+  undo: false
+  poll_headless:
+    OBJECT: true
+    EDIT: true
+    SCULPT: true
+twin:
+  status: n/a
+  what: ''
+verdict:
+  call: remove
+  why: A human session switch that dispatches another operator by name. An agent should name the representation
+    it edits (Mesh vs BMesh) explicitly, and flush is a call, not a mode.
+  dead_fact: DF1
+  contested: false
+  by: hand
+  evidence: L1
