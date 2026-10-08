@@ -1,6 +1,6 @@
 # newblender
 
-Blender's source, redesigned for AI agents as the primary user. **newblender is not a content tool or an MCP wrapper.** It is a study of which parts of Blender's architecture assume a human with a mouse and keyboard, and what an engine built for agents would look like instead.
+Blender's source, redesigned for AI agents as the primary user. **Site:** <https://mbaneshi.github.io/newblender/> (English and Persian). **newblender is not a content tool or an MCP wrapper.** It is a study of which parts of Blender's architecture assume a human with a mouse and keyboard, and what an engine built for agents would look like instead.
 
 **Process:** RFC → discovery → spec → plan. No newblender implementation starts before a spec is approved. Everything here so far is discovery: measurement, demos and tools.
 
@@ -23,6 +23,7 @@ Blender's source, redesigned for AI agents as the primary user. **newblender is 
 | `tools/cards/` | Generates the capability cards from the S01 trace |
 | `tools/live/` | A bridge to a running Blender, plus the demo build scripts and their check scripts |
 | `tools/blind/` | Blind quality scoring: agent renders mixed with real frames, rated without knowing the source |
+| `site/` | The public site: Astro + Starlight, built from `docs/` by `site/scripts/sync-docs.mjs` and deployed to GitHub Pages from `dev` |
 | `scripts/` | Branch rails: `new-issue`, `promote`, `setup-hooks`, and the pre-push guard |
 
 ## Data lives outside the repo

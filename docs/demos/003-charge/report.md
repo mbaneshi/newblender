@@ -1,6 +1,6 @@
 # Demo 003: Charge, first slice — report
 
-Battery-factory bay from [docs/showcase/03-charge.md](../../../newblender/docs/showcase/03-charge.md), built live in Blender 5.2.2 through the Blender Lab bridge.
+Battery-factory bay from [docs/showcase/03-charge.md](../../showcase/03-charge.md), built live in Blender 5.2.2 through the Blender Lab bridge.
 Build: `tools/live/demos/charge_build.py`. Checks, written before the build: `tools/live/checks/charge_checks.py`. Later scripts: `charge_l3_l4.py`, `charge_render_still.py`.
 Textures: Poly Haven CC0 (concrete_floor_worn_001, concrete_floor_02, blue_metal_plate, metal_plate, corrugated_iron), 1K, in `~/newblender-data/assets/polyhaven/`.
 

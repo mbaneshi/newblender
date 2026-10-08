@@ -1,0 +1,39 @@
+---
+title: newblender
+description: Blender's source, redesigned for AI agents as the primary user.
+template: splash
+hero:
+  tagline: What would Blender look like if its source were designed for AI agents first, and not for a human holding a mouse? A research lab that measures before it redesigns.
+  actions:
+    - text: Where things stand
+      link: /newblender/status/
+      icon: right-arrow
+    - text: Read RFC 0001
+      link: /newblender/rfc/0001-newblender/
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/mbaneshi/newblender
+      icon: github
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+> **The bet:** today's agent integrations (MCP servers, `bpy` wrappers, add-on bridges) bolt an agent onto an architecture built around a human operator. newblender asks what changes when the agent is the *primary* user. It starts by measuring where the old assumptions actually live in the source.
+
+<CardGrid>
+  <Card title="Dead facts" icon="warning">
+    Four beliefs the design no longer assumes: the human operates and the AI helps; humans read the source; agents need tiny imperative steps; the UI is the source of truth.
+  </Card>
+  <Card title="Discovery" icon="magnifier">
+    2,498 operators registered, 1,605 of them context-dependent. 78 real production files dissected. Every modelling operator traced to where it is gated.
+  </Card>
+  <Card title="Live demos" icon="rocket">
+    An agent builds real shots in Blender 5.2 through a live bridge. Every build is judged by checks written *before* the build.
+  </Card>
+  <Card title="Blind scoring" icon="approve-check">
+    Agent renders are mixed with real film frames and rated without knowing which is which. First result: 1.67 vs. 4.00 out of 5.
+  </Card>
+</CardGrid>
+
+**Process:** RFC, then discovery, then spec, then plan. No engine code exists yet, and none will be written before a spec is approved.
