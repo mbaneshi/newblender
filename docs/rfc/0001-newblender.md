@@ -64,6 +64,42 @@
 
 Stock Blender makes verification hard: results are only visible by drawing them, edit-mode data is stale until mode exit, and scripted calls leave no undo history.
 
+### R7 — Capability scoring (2026-10-08)
+
+**Why.** After three live builds (chair, Flow slice, Charge slice), the scores used so far were mixed:
+
+- **Objective:** pre-written checks.
+- **Self-graded:** the agent's own layer-5 "look" score.
+- **Predicted:** readiness and difficulty ratings in the showcase plans.
+
+Self-grading is a conflict of interest, and predictions are only worth something when compared with outcomes.
+
+**The score.** Every agent task reports one row with five measures:
+
+| Measure | Definition | Source |
+|---|---|---|
+| **Correctness** | % of pre-written layer 1–4 checks passed on the final run, plus the failures left open (listed, not hidden) | check scripts |
+| **Autonomy** | Hands-on human interventions needed to finish. Counted separately from approvals and topic choice. | session log |
+| **Self-correction** | Problems found and fixed before delivery (by checks / by looking) vs. problems the owner finds after delivery | build log, owner review |
+| **Cost** | Wall time, agent iterations, render compute | logs |
+| **Quality** | **Blind** rating against the real reference (see below). Replaces the agent's self-graded layer-5 score as the quality number. | blind scoring session |
+
+**Rules:**
+
+1. **Checks are written before building** and owned separately from the build. When the builder changes a checker, the change is flagged in the report with the reason.
+2. **Thresholds are never loosened to pass.** A threshold that looks wrongly defined is raised as a question for the owner. It stays a FAIL until the owner rules on it.
+3. **The agent's own look score is kept, but labelled "self".** It never counts as the quality measure.
+4. **Calibration:** across tasks, predicted readiness and difficulty are compared with the measured row, to show how good the agent's planning is.
+
+**Blind scoring:**
+
+- **The pool:** agent renders are mixed with real frames from the reference works, all normalised (same width, metadata stripped, random file names) and served by a local tool under random IDs.
+- **The ratings:** the owner gives each item (a) a 1–5 production-quality rating and (b) a guess, agent or studio.
+- **The answer key** stays server-side. Scores lock before unblinding.
+- **Results:** mean quality for agent vs. studio items, and guess accuracy. Accuracy near 50% would mean the agent's work is indistinguishable from the studio's.
+- **Licensing:** reference frames are used locally for evaluation only and are never published.
+- **Tool:** `tools/blind/`.
+
 ## Discovery notes
 
 - [00 — Prior work, and which of its claims rest on dead facts](../discovery/00-prior-work.md)
