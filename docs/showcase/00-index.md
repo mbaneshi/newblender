@@ -2,7 +2,14 @@
 
 Compiled 2026-10-07. This is a list of 20 works made mostly by hand in Blender. They cover the whole range of the tool rather than 20 short films: feature films, open movies, indie VFX, blockbuster VFX, 2D-in-3D Grease Pencil, a TV series, immersive motion graphics, Geometry Nodes art, scientific visualisation, architectural visualisation, product rendering at scale, hard-surface work, character sculpting, a game and fluid simulation. Most date from 2019 to 2026, and each has at least one primary or reputable trade source.
 
-Each item will get its own file later, named `NN-slug.md` in this folder.
+Each item has its own plan file, named `NN-slug.md` in this folder.
+
+**Built so far (first slices, live in Blender 5.2):**
+
+| # | Slice | Checks | Blind quality (agent vs. studio) | Report |
+|---|---|---|---|---|
+| 01 | Flow: flooded-forest boat shot, 4K | 11/11, plus layers 3–4 pass | 1.00 vs. 3.75 | [002-flow](../demos/002-flow/report.md) |
+| 03 | Charge: battery-factory bay | 11/11 live; UV-stretch and firefly fails await owner rulings | 2.33 vs. 4.50 | [003-charge](../demos/003-charge/report.md) |
 
 **How sources are marked:**
 

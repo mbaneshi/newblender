@@ -113,6 +113,11 @@ Self-grading is a conflict of interest, and predictions are only worth something
 - [03 — Source inventory per stage](../discovery/03-inventory.md), with slices [03a local](../discovery/03a-inventory-local.md), [03b real files](../discovery/03b-inventory-real-files.md), [03c why](../discovery/03c-inventory-why.md)
 - **S01 Modeling pilot:** [brief](../discovery/s01-modeling/05-brief.md) · [workflow](../discovery/s01-modeling/01-workflow-script.md) · [census](../discovery/s01-modeling/02-census.md) · [trace](../discovery/s01-modeling/03-trace.md) · [why](../discovery/s01-modeling/04-why.md)
 - [Capability cards](../discovery/capabilities/) (320, S01) · [Transformation ledger](../discovery/ledger.md) (L-001 … L-011)
+- [Showcase](../showcase/00-index.md): 20 verified Blender works, each with an agent build plan
+- **Live demos:**
+  - [001 chair](../demos/001-chair/report.md): 12/12 checks
+  - [002 Flow slice](../demos/002-flow/report.md): 11/11 checks, blind quality 1.00
+  - [003 Charge slice](../demos/003-charge/report.md): 2 open fails awaiting owner rulings, blind quality 2.33
 
 ## 4. Resolutions
 
