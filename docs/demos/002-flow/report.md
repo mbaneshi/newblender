@@ -1,6 +1,6 @@
 # Demo 002: Flow, first slice — report
 
-Flooded-forest shot from [docs/showcase/01-flow.md](../../../newblender/docs/showcase/01-flow.md), built live in Blender 5.2.2 through the Blender Lab bridge, then rendered headless.
+Flooded-forest shot from [docs/showcase/01-flow.md](../../showcase/01-flow.md), built live in Blender 5.2.2 through the Blender Lab bridge, then rendered headless.
 Build script: `tools/live/demos/flow_build.py` · checks written first: `tools/live/checks/flow_checks.py`, `flow_hash.py`, `flow_render_checks.py`.
 
 **Outputs:** `flow.blend` · `frames/` (240 × 3840×2160 PNG) · `flow_shot_4k.mp4` · `flow_shot_1080p.mp4` · `still_0001.png`, `still_0240.png`

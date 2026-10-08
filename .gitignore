@@ -10,3 +10,13 @@ __pycache__/
 *.pyc
 node_modules/
 *.blend1
+
+# site
+site/node_modules/
+site/dist/
+site/.astro/
+site/src/content/docs/rfc/
+site/src/content/docs/discovery/
+site/src/content/docs/showcase/
+site/src/content/docs/demos/
+.playwright-mcp/
