@@ -9,13 +9,14 @@ Checks (written first): tools/live/checks/charge_checks.py.
 """
 
 import math
+import os
 
 import bmesh
 import bpy
 from mathutils import Vector
 
 sc = bpy.context.scene
-TEX = "/Users/bm/newblender-data/assets/polyhaven"
+TEX = os.path.expanduser("~/newblender-data/assets/polyhaven")
 FLOOR_TOP = 0.1
 FX_ORIGIN = Vector((7.4, 0.0, 1.35))
 FX_FRAME = 48
