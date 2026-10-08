@@ -7,6 +7,7 @@ newblender is in **discovery**. Nothing in the engine has been redesigned yet. E
 
 ## The documents
 
+- **Research:** [how we work](/newblender/research/approach/), the dated [log](/newblender/research/log/), [findings and current thinking](/newblender/research/findings/), and the [roadmap](/newblender/research/roadmap/).
 - **[RFC 0001](/newblender/rfc/0001-newblender/)** is the framing. It has seven resolutions so far: the dead facts, discovery first, two tracks, a virtual production, the four-pass method, six-layer verification and capability scoring.
 - **[RFC 0002](/newblender/rfc/0002-research-publication/)** proposes publishing the discovery work as a research series. It is open.
 - **[The S01 Modeling brief](/newblender/discovery/s01-modeling/05-brief/)** covers the first pipeline stage, studied end to end in four passes: read, dissect, trace, why.

@@ -9,7 +9,7 @@ const DOCS = join(REPO_ROOT, "docs");
 const OUT = new URL("../src/content/docs/", import.meta.url).pathname;
 const REPO = "https://github.com/mbaneshi/newblender";
 const BASE = "/newblender";
-const SECTIONS = ["rfc", "discovery", "showcase", "demos"];
+const SECTIONS = ["research", "rfc", "discovery", "showcase", "demos"];
 
 async function walk(dir) {
   const out = [];
