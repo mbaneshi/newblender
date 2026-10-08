@@ -99,6 +99,11 @@ Self-grading is a conflict of interest, and predictions are only worth something
 - **Results:** mean quality for agent vs. studio items, and guess accuracy. Accuracy near 50% would mean the agent's work is indistinguishable from the studio's.
 - **Licensing:** reference frames are used locally for evaluation only and are never published.
 - **Tool:** `tools/blind/`.
+- **First session (`s01-flow-charge`, 2026-10-08):**
+  - **Mean quality:** agent 1.67 vs. studio 4.00.
+  - **Guess accuracy:** 83%.
+  - **By slice:** Flow 1.00 (self score 2.5, so 1.5 too high) and Charge 2.33 (self score 2.5, close). One Charge frame passed as studio work.
+  - **Takeaway:** the self score is not a trustworthy quality signal. Rule 3 holds.
 
 ## Discovery notes
 
