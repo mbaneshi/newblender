@@ -42,6 +42,7 @@ export default defineConfig({
       },
       sidebar: [
         { label: "Start here", translations: { fa: "شروع" }, items: [{ slug: "status" }] },
+        section("Research", "پژوهش", "research"),
         section("RFCs", "سندهای طراحی", "rfc"),
         section("Discovery", "کشف", "discovery"),
         section("Live demos", "نمایش‌های زنده", "demos"),

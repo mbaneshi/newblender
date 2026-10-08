@@ -6,6 +6,7 @@ Blender's source, redesigned for AI agents as the primary user. **Site:** <https
 
 ## Start here
 
+- **[Research](docs/research/approach.md)** covers how we work, with a dated [log](docs/research/log.md), [findings and current thinking](docs/research/findings.md), and the [roadmap](docs/research/roadmap.md).
 - **[RFC 0001: newblender](docs/rfc/0001-newblender.md)** sets out the framing, the open questions and resolutions R1–R7. It covers the dead facts, the four-pass method, six-layer verification and capability scoring.
 - **[RFC 0002: research publication](docs/rfc/0002-research-publication.md)** is a proposal to publish the discovery work as a paper series. It is open, and nothing is decided yet.
 - **[S01 Modeling brief](docs/discovery/s01-modeling/05-brief.md)** is the first stage studied end to end.
@@ -14,6 +15,7 @@ Blender's source, redesigned for AI agents as the primary user. **Site:** <https
 
 | Path | What it holds |
 |---|---|
+| `docs/research/` | Approach, dated log, findings and positions, roadmap |
 | `docs/rfc/` | RFCs: the decisions and the reasoning behind them |
 | `docs/discovery/` | Notes 00–03, the S01 pilot, 320 capability cards and the transformation ledger (L-001…) |
 | `docs/showcase/` | 20 verified Blender works, each with a plan for how an agent would build it ([index](docs/showcase/00-index.md)) |
