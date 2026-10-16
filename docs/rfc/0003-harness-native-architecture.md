@@ -15,7 +15,7 @@ What does it take for an AI agent to be a first-class citizen of a 3D applicatio
 
 An MCP server is only a socket. The harness is the working environment around the model: the loop, addressable queries, diffs, checkpoints and branches, verification, permissions, memory and plan layers, subagents. Claude Code leans on four properties of a repo (text addressability, diffs, git undo, tests as oracle). A scene has none of them by default.
 
-**Framing (owner decision, 2026-10-17, updated).** [RFC 0001 R8](0001-newblender.md) sets the final goal as a new agent-native platform ([RFC 0004](0004-platform-stack-and-scope.md): Rust kernel native and in WASM, Supabase, Svelte, native agentic harness). The out-of-process harness in this RFC is therefore the **first version of that product's harness** and a **measuring instrument** for what its kernel must provide, with Blender as the lab and an interim headless worker. Patching Blender (options B and C) is optional and no longer the destination.
+**Framing (owner decision, 2026-10-17, updated).** [RFC 0001 R8](0001-newblender.md) sets the north star as a new agent-native platform ([RFC 0004](0004-platform-stack-and-scope.md): Rust kernel native and in WASM, Supabase, Svelte, native agentic harness). The out-of-process harness in this RFC is therefore the **first version of that product's harness** and a **measuring instrument** for what its kernel must provide, with Blender as the lab and an interim headless worker. Patching Blender (options B and C) is optional and no longer the destination.
 
 ## 2. Verified current state (2026-10-17)
 

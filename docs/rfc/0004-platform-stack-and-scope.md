@@ -1,6 +1,6 @@
 # RFC 0004 — Platform stack and scope: a Rust + Supabase + Svelte system inspired by Blender
 
-- **Status:** Open, adopted as the final goal by [RFC 0001 R8](0001-newblender.md) (owner, 2026-10-17). Scope tier, viewer technology and budget are still open (§7).
+- **Status:** Open. The platform is the **north star** ([RFC 0001 R8](0001-newblender.md), owner, 2026-10-17): a direction and a yardstick, not a committed deliverable. Scope tier, viewer technology and budget are still open (§7).
 - **Opened:** 2026-10-17
 - **Author:** mbaneshi (with Claude Code)
 - **Drives:** [#3](https://github.com/mbaneshi/newblender/issues/3)
@@ -10,9 +10,9 @@
 
 ## 0. History
 
-Parked earlier on 2026-10-17 ("decide after probes H1 and H2"), then adopted as the final goal the same day (RFC 0001 R8). The owner's argument: a Supabase data layer, a Rust/WASM backend and a web-based Blender-class editor, with a native agentic harness, is a giant leap over retrofitting agents onto desktop Blender. The honest cost remains in §3: T2 is roughly 150 to 250 working days.
+Parked earlier on 2026-10-17 ("decide after probes H1 and H2"), then adopted the same day as the north star (RFC 0001 R8). The owner's argument: a Supabase data layer, a Rust/WASM backend and a web-based Blender-class editor, with a native agentic harness, is a giant leap over retrofitting agents onto desktop Blender. The honest cost remains in §3: T2 is roughly 150 to 250 working days.
 
-**Consequence for the plan.** Probes H1 to H3 (RFC 0003) now measure what the new kernel must provide and de-risk the control plane. They are no longer a gate on whether the platform is built.
+**Consequence for the plan.** Probes H1 to H3 (RFC 0003) measure what the new kernel must provide, de-risk the control plane, and supply the star checks in RFC 0001 R8. Commitments stay stepwise: the T0 spike and H1/H2 come before any larger tier.
 
 ## 1. Question
 
@@ -62,7 +62,7 @@ Reuse notes from the research: nexus forbids GPL dependencies (`MASTER_BRIEF.md:
 
 ## 6. Recommendation (draft)
 
-With the platform as the destination, build **S1 at T0**: a Rust + Supabase + Svelte control plane that treats Blender as a swappable headless worker. It is the harness from RFC 0003 and gives the nexus-style stack at the lowest cost. Decide on T1 after the Phase 0 spike and probes H1 and H2. Revisit S2 or S3 only with probe evidence.
+With the platform as the north star, build **S1 at T0**: a Rust + Supabase + Svelte control plane that treats Blender as a swappable headless worker. It is the harness from RFC 0003 and gives the nexus-style stack at the lowest cost. Decide on T1 after the Phase 0 spike and probes H1 and H2. Revisit S2 or S3 only with probe evidence.
 
 ## 7. Open questions for the owner
 
