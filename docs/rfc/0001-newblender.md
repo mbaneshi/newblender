@@ -1,6 +1,6 @@
 # RFC 0001 — newblender: Blender's source, redesigned for AI as the primary user
 
-- **Status:** Brainstorming (open questions being resolved one at a time)
+- **Status:** Brainstorming (open questions being resolved one at a time); final goal set by R8 (2026-10-17)
 - **Opened:** 2026-10-07
 - **Author:** mbaneshi (with Claude Code)
 - **Successor:** the spec at `docs/superpowers/specs/` once this RFC resolves
@@ -28,8 +28,8 @@
 - [x] Q3 — How do we run discovery? → R3 (both tracks, meeting in capability cards)
 - [ ] Q3a — The owner's refinement: anchor discovery in **one complete real production** (an open movie with all its files) and reverse-engineer it end to end, noting internals and human-interface findings along the way. Which production? → No Blender Studio subscription, and none planned. Owner's position: for every aspect there are very good free docs, repos, assets and instructions if we research deeply, and golden insight sits across Studio, the manual, the developer portal and the forum. → R4
 - [x] Q3b — Study and distillation method → R5
-- [ ] Q4 — Reuse vs rewrite: ~3.25M lines of C++ (Cycles, BMesh, Geometry Nodes, I/O) against the Rust-rewrite pattern (ArtCraft). Deferred until discovery has data.
-- [ ] Q5 — Relationship to upstream. Note: the Blender Foundation's May 2026 stance ("made by humans for humans") makes upstreaming unlikely near-term.
+- [x] Q4 — Reuse vs rewrite: ~3.25M lines of C++ (Cycles, BMesh, Geometry Nodes, I/O) against the Rust-rewrite pattern (ArtCraft). → **R8 (2026-10-17): the final goal is a new agent-native platform; Blender is the lab, the reference and an interim worker.**
+- [~] Q5 — Relationship to upstream (lower priority after R8: no engine fork is the destination; observation patches stay optional). Note: the Blender Foundation's May 2026 stance ("made by humans for humans") makes upstreaming unlikely near-term.
 
 ### R6 — Verification model: how an agent knows it was right without a human watching (2026-10-07)
 
@@ -197,3 +197,19 @@ Rejected framings for phase 1: a benchmark-first proof instrument, a usable engi
   Reviews are asynchronous and never block the next stage.
 
 **Data:** the core set of free files is approved for download. Data lives outside the repo at `~/newblender-data/`. `.blend` files are opened only with `--factory-startup --disable-autoexec`, so embedded scripts never run.
+
+### R8 — Final goal: a new agent-native platform, with Blender as the lab (2026-10-17)
+
+**Decision (owner).** The ultimate landing is a **web-based, Blender-inspired creative platform whose first citizen is an agent**: a Rust kernel (native and compiled to WebAssembly), Supabase as the data layer, a Svelte web front end, and a native agentic harness. This is the stack of `nexus-platform-ir`, applied to 3D. [RFC 0004](0004-platform-stack-and-scope.md) is un-parked as the destination. Earlier the same day the owner had chosen "decide after H1/H2"; this supersedes it.
+
+**Owner's reasoning, condensed.** A data layer, a Rust or WASM backend and a web-based Blender-class editor, together with a harness that is native to the product and not bolted on, is a giant leap over retrofitting agents onto desktop Blender.
+
+**Why this fits the evidence.** The problems the discovery found are architecture-level properties of Blender that a new kernel can avoid by construction: operators gated by GUI context (P01: 0 of 23 pass poll headless; 5 crash), a linear truncating undo stack, no persistent ids (`session_uid` dies on save, P02), no diff or change attribution, and about 29% of the code coupled to the human interface. A new kernel can be headless by design, event-sourced (branching and diff for free), and addressable, and a web deployment adds multi-user state and a single kernel that runs in the browser and on the server.
+
+**What R8 does not claim.** It does not reduce the scale of the work. Blender represents decades of mesh, rendering, simulation and I/O. At nexus-platform-ir's measured pace (about 50 working days for a 2D CAD) tier T2 is roughly 150 to 250 working days and tier T3 is out of reach (RFC 0004 §3). Maturity of Rust 3D crates and wgpu inside WASM is unverified.
+
+**Path (strangler pattern).** Build the novel part first and borrow the heavy part: (1) the control plane (registry, event log, branches, verification, permissions, UI) in Rust + Supabase + Svelte, with Blender as a headless worker behind a backend trait (RFC 0004 option S1); (2) replace the worker piece by piece with native Rust crates where the probes show it pays; (3) a standalone kernel (S3) only after the control plane has proven the product.
+
+**What stays.** The evidence-first method (R2 to R7) applies to the new platform: measure before building, written-before-build checks, blind quality, evidence levels. The Blender probes (P01, P02, H1 to H3) remain valuable as measurements of what an agent-native kernel must provide. The ledger entries become requirements for the new kernel instead of patches to Blender.
+
+**Open under R8** (see RFC 0004 §7): scope tier target, first viewer technology, what Supabase holds, labor budget, calendar. No engine or platform code is written before an approved spec.
