@@ -1,12 +1,18 @@
 # RFC 0004 — Platform stack and scope: a Rust + Supabase + Svelte system inspired by Blender
 
-- **Status:** Open (estimates drafted, nothing decided)
+- **Status:** Parked (owner decision 2026-10-17: the final goal is decided after probes H1 and H2 of RFC 0003). Kept as an option, not deleted.
 - **Opened:** 2026-10-17
 - **Author:** mbaneshi (with Claude Code)
 - **Drives:** [#3](https://github.com/mbaneshi/newblender/issues/3)
 - **Depends on:** [RFC 0003](0003-harness-native-architecture.md), [RFC 0001](0001-newblender.md)
 - **Evidence:** [`docs/research/2026-10-17-agent-harness-for-creative-suites.md`](../research/2026-10-17-agent-harness-for-creative-suites.md); calibration from the owner's own `nexus-platform-ir` repository
 - **Discussion:** _not posted_
+
+## 0. Why parked, and when to reopen
+
+[RFC 0001](0001-newblender.md) R2 rejected a from-scratch foundation for phase 1, and tiers T0 plus T1 cost about 55 to 95 working days against a first probe round of days and about USD 60. The registry, event-log and verification design from RFC 0003 is engine-agnostic, so what the probes validate can be ported into this stack later.
+
+**Reconsider when** (a) H2 shows cheap rollback does not help agents, so branchable undo (L-008) loses its case, or (b) the fork route (RFC 0003 option C) proves unaffordable (rebase cost, Foundation hostility, licensing), or (c) the owner decides the standalone product is the goal.
 
 ## 1. Question
 
