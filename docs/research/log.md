@@ -98,3 +98,12 @@ The first runtime probe from the roadmap. Full write-up: [P01](../discovery/prob
 ## 2026-10-17: reframe after P02 to P05
 
 The owner questioned whether the Claude Code analogy holds for 3D and asked to start from math and computer science, and to weigh generative, programmatic and hybrid futures before deciding where to invest. Notes, a three-layer model and seven research questions: [reframe notes](2026-10-17-reframe-spatial-intelligence-and-first-principles.md). No RFC changed.
+
+## 2026-10-17: deep research on spatial intelligence and 3D authoring
+
+Six researchers and a report writer answered the seven reframe questions. Condensed record: [deep research](2026-10-17-deep-research-spatial-intelligence-3d-authoring.md).
+
+- **Headline:** the north star holds in a narrower form. Invest in the check-and-edit layer, borrow simulation, buy spatial understanding as an import.
+- **Hypotheses:** H1 supported as a map, weak as an architecture. H2 supported if read as invariants-first. H3 mostly supported; the deterministic kernel is the final judge.
+- **Biggest gap:** no October 2026 frontier scores on BlenderGym, BenchCAD or CADEngBench.
+- No RFC changed. No API spend.
