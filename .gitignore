@@ -21,3 +21,8 @@ site/src/content/docs/showcase/
 site/src/content/docs/demos/
 .playwright-mcp/
 site/src/content/docs/research/
+
+# build outputs
+target/
+pkg/
+dist/
