@@ -21,3 +21,7 @@ site/src/content/docs/showcase/
 site/src/content/docs/demos/
 .playwright-mcp/
 site/src/content/docs/research/
+
+# labs: third-party clones for study (never committed)
+labs/
+.claude-drafts/

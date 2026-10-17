@@ -38,6 +38,24 @@ Most ledger entries are documented and traced (L1) but not yet reproduced at run
 - Write the newblender spec: the agent-native shape across stages, starting from the [S01 proposal](../discovery/s01-modeling/05-brief.md#6-the-agent-native-shape-for-modelling-proposal-interpretation).
 - [RFC 0002](../rfc/0002-research-publication.md): decide whether and how to publish the discovery work as a research series.
 
+## Horizon notes: what the stack opens (north star, 2026-10-17)
+
+The north star ([RFC 0001 R8](../rfc/0001-newblender.md), [RFC 0004](../rfc/0004-platform-stack-and-scope.md)) is a Rust kernel (native and WASM), Supabase as the data layer, a Svelte front end and a native agent harness. While we do lab work we keep it in the back of our minds. These are **hypotheses from reasoning about how the tools work, not tested for 3D**; each is a candidate star check, not a plan.
+
+| Choice | What it may open | Gap it answers (evidence) |
+|---|---|---|
+| Supabase: Postgres, auth, storage, realtime, row-level security | Append-only event log with branches as rows; snapshot and render storage; change streaming to agents and viewers; risk classes (R0 to R4) enforced as row-level policy | Linear truncating undo ([04](../discovery/04-ai-wiring-seams.md) §5); no change stream; extension permissions are displayed, never enforced |
+| Rust server and kernel | One kernel native and in WASM; headless by construction; command registry and JSON Schema from one source; WASM sandbox for agent code | GUI-coupled operators (P01: 0 of 23 pass poll headless); drifting tool vocabularies across the Craft apps |
+
+**Look-ahead habits (cheap; they shape format, never scope):**
+
+1. Log probe results as event records (actor, model, input, output, previous hash), the nexus envelope. JSON lines today, a table later.
+2. Write tool contracts as JSON Schema first; they map to Rust types later.
+3. Keep Blender behind a backend interface so the worker can be swapped.
+4. Keep this list with an evidence level per item, like the ledger.
+
+**Guards.** Each lab step must answer its own question first; look-ahead only decides naming and format. Anything that costs real effort gets its own issue. Treat Supabase and Rust as hypotheses until the T0 spike; unverified costs include the hosted-service dependency, row-level-security complexity and realtime limits at scene-sized payloads.
+
 ## Parked (gray zones)
 
 - **G1:** fine-tuning models to act like a human in 3D, or to judge art the way a human would.
