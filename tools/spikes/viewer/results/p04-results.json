@@ -1,0 +1,24 @@
+{
+  "env": {"date": "2026-10-17", "machine": "Apple M4 Max (ANGLE Metal), 14 cores, macOS", "browser": "Chrome 155 (headed)", "viewport": "960x540, pixel ratio 1", "three": "0.186.0", "rust": "1.99.0", "wasm_bindgen": "0.2.129"},
+  "native_rust": [
+    {"grid_n": 224, "out_tris": 401408, "subdivide_ms": 4.53, "normals_ms": 1.58},
+    {"grid_n": 447, "out_tris": 1598472, "subdivide_ms": 22.97, "normals_ms": 6.89},
+    {"grid_n": 894, "out_tris": 6393888, "subdivide_ms": 107.75, "normals_ms": 33.53}
+  ],
+  "browser_kernel_median_ms": [
+    {"grid_n": 224, "out_tris": 401408, "wasm": {"subdivide": 5.4, "normals": 1.9}, "js": {"subdivide": 18.1, "normals": 18.7}},
+    {"grid_n": 447, "out_tris": 1598472, "wasm": {"subdivide": 26.3, "normals": 7.6}, "js": {"subdivide": 95.5, "normals": 45.1}},
+    {"grid_n": 894, "out_tris": 6393888, "wasm": {"subdivide": 162.7, "normals": 33.5}, "js": {"subdivide": 604.8, "normals": 183.2}}
+  ],
+  "checksums_wasm_vs_js": [[33142073.572236773, 33142073.57221884], [524094028.9928821, 524094028.994269], [8373877139.850617, 8373877139.850214]],
+  "wasm_init_ms": 24.5,
+  "render": [
+    {"tris": 100352, "impl": "wasm", "handoff": "view", "build_ms": 5.6, "first_frame_ms": 47.0, "throughput_ms": {"median": 0.6, "p95": 1.3}, "raf_interval_ms": {"median": 16.6, "p95": 29.9}},
+    {"tris": 399618, "impl": "wasm", "handoff": "view", "build_ms": 18.7, "first_frame_ms": 87.8, "throughput_ms": {"median": 1.0, "p95": 2.5}, "raf_interval_ms": {"median": 16.6, "p95": 19.4}},
+    {"tris": 1598472, "impl": "wasm", "handoff": "view", "build_ms": 82.1, "first_frame_ms": 81.2, "throughput_ms": {"median": 0.7, "p95": 2.4}, "raf_interval_ms": {"median": 16.7, "p95": 18.0}},
+    {"tris": 1598472, "impl": "js", "handoff": "view", "build_ms": 225.2, "first_frame_ms": 67.9, "throughput_ms": {"median": 1.5, "p95": 2.5}, "raf_interval_ms": {"median": 16.7, "p95": 18.0}},
+    {"tris": 1598472, "impl": "wasm", "handoff": "copy", "build_ms": 79.0, "first_frame_ms": 58.3, "throughput_ms": {"median": 1.2, "p95": 2.8}, "raf_interval_ms": {"median": 16.7, "p95": 18.1}},
+    {"tris": 6393888, "impl": "wasm", "handoff": "view", "build_ms": 677.4, "first_frame_ms": 257.2, "throughput_ms": {"median": 1.8, "p95": 3.8}, "raf_interval_ms": {"median": 16.8, "p95": 18.7}}
+  ],
+  "bundle": {"wasm_kb": 28.86, "wasm_gzip_kb": 13.06, "js_kb": 521.8, "js_gzip_kb": 131.95}
+}
