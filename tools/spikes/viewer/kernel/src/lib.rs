@@ -5,6 +5,9 @@ use std::collections::HashMap;
 use std::hash::{BuildHasherDefault, Hasher};
 use wasm_bindgen::prelude::*;
 
+pub mod edit;
+pub use edit::{pick_brute, Accel, Dirty};
+
 /// Small multiplicative hasher (FxHash-like); the default SipHash would unfairly slow the Rust side.
 #[derive(Default)]
 pub struct Fx(u64);
@@ -121,13 +124,15 @@ impl Mesh {
 #[wasm_bindgen]
 pub struct Kernel {
     mesh: Mesh,
+    acc: Option<Accel>,
+    dirty: (u32, u32, u32),
 }
 
 #[wasm_bindgen]
 impl Kernel {
     #[wasm_bindgen(constructor)]
     pub fn new(n: u32) -> Kernel {
-        Kernel { mesh: Mesh::grid(n) }
+        Kernel { mesh: Mesh::grid(n), acc: None, dirty: (0, 0, 0) }
     }
     pub fn subdivide(&mut self) {
         self.mesh = self.mesh.subdivide();
@@ -143,6 +148,41 @@ impl Kernel {
     }
     pub fn checksum(&self) -> f64 {
         self.mesh.checksum()
+    }
+    /// Build adjacency + BVH (needed before pick/sculpt/refit).
+    pub fn build_accel(&mut self) {
+        self.acc = Some(Accel::new(&self.mesh));
+    }
+    /// Closest triangle hit by the ray, or -1. Writes the distance to `hit_t()`.
+    pub fn pick(&mut self, ox: f32, oy: f32, oz: f32, dx: f32, dy: f32, dz: f32) -> i32 {
+        let r = self.acc.as_ref().unwrap().pick(&self.mesh, [ox, oy, oz], [dx, dy, dz]);
+        self.dirty.2 = r.map_or(0, |h| h.1.to_bits());
+        r.map_or(-1, |h| h.0 as i32)
+    }
+    pub fn pick_brute(&mut self, ox: f32, oy: f32, oz: f32, dx: f32, dy: f32, dz: f32) -> i32 {
+        pick_brute(&self.mesh, [ox, oy, oz], [dx, dy, dz]).map_or(-1, |h| h.0 as i32)
+    }
+    pub fn hit_t(&self) -> f32 {
+        f32::from_bits(self.dirty.2)
+    }
+    /// Brush stroke; returns the number of vertices whose normal was repaired. See dirty_lo/dirty_hi.
+    pub fn sculpt(&mut self, cx: f32, cy: f32, cz: f32, radius: f32, amount: f32) -> u32 {
+        let acc = self.acc.as_mut().unwrap();
+        let d = self.mesh.sculpt(acc, [cx, cy, cz], radius, amount);
+        self.dirty = (d.lo, d.hi, self.dirty.2);
+        d.touched as u32
+    }
+    pub fn refit(&mut self) {
+        self.acc.as_mut().unwrap().refit(&self.mesh);
+    }
+    pub fn refit_local(&mut self) {
+        self.acc.as_mut().unwrap().refit_local(&self.mesh);
+    }
+    pub fn dirty_lo(&self) -> u32 {
+        self.dirty.0
+    }
+    pub fn dirty_hi(&self) -> u32 {
+        self.dirty.1
     }
     /// Pointers into WASM linear memory, for zero-copy typed-array views on the JS side.
     /// A view is invalidated when memory grows (any allocating call), so re-create it after each op.
