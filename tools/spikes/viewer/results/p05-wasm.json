@@ -1,0 +1,16 @@
+{"env":"Chrome 155, Apple M4 Max (ANGLE Metal), vite preview; performance.now() coarsened to ~0.1 ms, so sub-0.1 ms values are batch-timed or marked below resolution",
+ "runs":[
+  {"n":707,"tris":999698,"verts":501264,"build_accel_ms":631.4,
+   "pick":{"wasm_bvh_ms":"below 0.1 ms timer resolution (native: 0.001)","wasm_brute_ms":7.5,"threejs_raycaster_ms":43.2,"raycaster_vs_kernel_max_dist_diff":4.5e-7,"mismatched_rays":0},
+   "strokes":[
+    {"strategy":"full","sculpt_ms":0.1,"refit_local_ms":0.1,"upload_render_ms":1.0,"edit_to_pixels_ms":1.2,"p95":1.8,"dirty_span_verts":24794,"touched_verts":1010},
+    {"strategy":"partial","sculpt_ms":0.1,"refit_local_ms":0.1,"upload_render_ms":0.6,"edit_to_pixels_ms":0.8,"p95":1.2,"dirty_span_verts":24794,"touched_verts":935},
+    {"strategy":"partial","sculpt_ms":0.1,"refit_local_ms":0.1,"upload_render_ms":0.5,"edit_to_pixels_ms":0.6,"p95":0.8,"dirty_span_verts":24794,"touched_verts":852}],
+   "agree_after_edits":true},
+  {"n":1000,"tris":2000000,"verts":1002001,"build_accel_ms":749.1,
+   "pick":{"wasm_bvh_ms":0.0011,"wasm_brute_ms":13.6,"threejs_raycaster_ms":66.1,"raycaster_vs_kernel_max_dist_diff":2.2e-7,"mismatched_rays":0},
+   "strokes":[
+    {"strategy":"full","sculpt_ms":0.2,"refit_local_ms":0.2,"upload_render_ms":1.5,"edit_to_pixels_ms":1.8,"p95":5.9,"dirty_span_verts":50060,"touched_verts":1948},
+    {"strategy":"partial","sculpt_ms":0.2,"refit_local_ms":0.1,"upload_render_ms":0.6,"edit_to_pixels_ms":0.9,"p95":1.0,"dirty_span_verts":50060,"touched_verts":1799},
+    {"strategy":"partial","sculpt_ms":0.1,"refit_local_ms":0.1,"upload_render_ms":0.6,"edit_to_pixels_ms":0.9,"p95":2.0,"dirty_span_verts":50060,"touched_verts":1632}],
+   "agree_after_edits":true}]}
